@@ -6,6 +6,9 @@ const {Chess}=require("chess.js");
 
 const app=express(), server=http.createServer(app), io=new Server(server);
 app.use(express.static(path.join(__dirname,"public")));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 const rooms=new Map();
 
 function code(){let c;do c=Math.random().toString(36).slice(2,8).toUpperCase();while(rooms.has(c));return c}
