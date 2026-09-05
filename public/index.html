@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505"><title>Chess Pro Ultimate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=12"></head><body>
+<div id="app">
+<section id="home" class="screen active home-clean-page">
+  <header class="home-topbar">
+    <div class="home-logo"><span class="home-logo-icon">♞</span> CHESS<span>PRO</span></div>
+    <div class="home-top-actions">
+      <button id="homeProfile" class="home-top-btn" type="button">♟ &nbsp;Profile</button>
+      <button id="homeSettings" class="home-top-btn" type="button">⚙ &nbsp;Settings</button>
+      <span class="home-online"><i></i> Online</span>
+    </div>
+  </header>
+  <main class="home-content">
+    <div class="home-hero">
+      <div class="home-kicker">ULTIMATE CHESS EXPERIENCE</div>
+      <h1>Play sharp.<br><em>Think deeper.</em></h1>
+      <p>A calm, polished chess experience with stronger AI, online rooms,<br class="desktop-break"> complete game tools and a distraction-free design.</p>
+    </div>
+    <div class="home-menu-grid">
+      <button class="home-menu-card featured" data-mode="computer" type="button"><span class="menu-icon">♞</span><span><b>Play Computer</b><small>Play against AI with<br>multiple difficulty levels</small></span><strong class="menu-arrow">→</strong></button>
+      <button class="home-menu-card" data-mode="local" type="button"><span class="menu-icon">♟♟</span><span><b>2 Player</b><small>Play with a friend on<br>the same device</small></span><strong class="menu-arrow">→</strong></button>
+      <button class="home-menu-card" data-mode="online" type="button"><span class="menu-icon">◎</span><span><b>Online Multiplayer</b><small>Create or join a private<br>room and play online</small></span><strong class="menu-arrow">→</strong></button>
+      <button class="home-menu-card" data-open="profile" type="button"><span class="menu-icon">▮▮▮</span><span><b>Profile &amp; Stats</b><small>View your rating, stats<br>and game history</small></span><strong class="menu-arrow">→</strong></button>
+    </div>
+  </main>
+  <div class="home-control-bar">
+    <button id="homeMusic" type="button"><span>♫</span><b>Music</b><small id="homeMusicState">ON</small></button>
+    <button id="homeSounds" type="button"><span>🔊</span><b>Sounds</b><small id="homeSoundsState">ON</small></button>
+    <button id="homeTime" type="button"><span>◷</span><b>Time Control</b><small id="homeTimeState">10 + 0</small></button>
+    <button id="homeBoard" type="button"><span>●</span><b>Board</b><small id="homeBoardState">Classic</small></button>
+    <button id="homeTheme" type="button"><span>♛</span><b>Theme</b><small id="homeThemeState">Classic</small></button>
+    <button id="homeAI" type="button"><span>▣</span><b>AI Level</b><small id="homeAIState">Hard</small></button>
+  </div>
+  <footer class="home-footer"><span>© 2025 Chess Pro Ultimate. All rights reserved.</span><span>◉ &nbsp; ◈ &nbsp; ◇</span></footer>
+</section>
+
+<section id="game" class="screen">
+ <header class="topbar"><button id="homeBtn" class="ghost-btn">← Home</button><div class="logo small"><span class="logo-knight">♞</span> CHESS<span>PRO</span></div>
+  <div class="top-actions"><button id="musicBtn" class="top-btn">♫ Music</button><button id="saveBtn" class="top-btn">Save</button><button id="settingsBtn" class="top-btn">⚙</button></div>
+ </header>
+ <div class="game-layout">
+  <main class="board-area">
+   <div class="player-strip"><div class="player-meta"><div id="blackAvatar" class="avatar black">♟</div><div><b id="blackName">Black</b><small id="blackSub">Player</small></div></div><div id="blackClock" class="clock">10:00</div></div>
+   <div class="board-wrap"><div id="board" class="board" aria-label="Chess board"></div></div>
+   <div class="player-strip"><div class="player-meta"><div id="whiteAvatar" class="avatar white">♙</div><div><b id="whiteName">White</b><small id="whiteSub">Player</small></div></div><div id="whiteClock" class="clock">10:00</div></div>
+  </main>
+  <aside class="right-column">
+   <section class="panel game-panel"><div class="panel-head"><div><span class="panel-kicker">LIVE GAME</span><h3 id="status">White to move</h3></div><span id="turnDot" class="turn-dot"></span></div><div class="moves" id="moves"></div>
+    <div class="actions"><button id="undoBtn">↶ Undo</button><button id="redoBtn">↷ Redo</button><button id="newBtn">＋ New Game</button><button id="flipBtn">⇅ Flip</button><button id="resignBtn" class="danger">⚑ Resign</button><button id="pgnBtn">PGN</button></div>
+   </section>
+   <section class="panel stats-panel"><div class="panel-head"><div><span class="panel-kicker">SESSION</span><h3>Game stats</h3></div></div><div class="stat-grid"><div><span>Moves</span><b id="statMoves">0</b></div><div><span>Captures</span><b id="statCaptures">0</b></div><div><span>Checks</span><b id="statChecks">0</b></div><div><span>Time</span><b id="statTime">10:00</b></div></div></section>
+   <section id="onlinePanel" class="panel online-panel hidden"><div class="panel-head"><div><span class="panel-kicker">ONLINE</span><h3 id="roomInfo">Room</h3></div><button id="copyRoom" class="mini-btn">Copy</button></div><div class="chat"><div id="chatLog"></div><div class="chat-row"><input id="chatInput" placeholder="Message opponent..."><button id="chatSend">Send</button></div></div></section>
+  </aside>
+ </div>
+</section>
+<div id="modal" class="modal hidden"><div class="modal-card"><button id="modalClose" class="modal-x" type="button" aria-label="Close">×</button><div id="modalContent"></div></div></div>
+<div id="toast" class="toast"></div></div>
+<script src="/socket.io/socket.io.js"></script><script type="module" src="app.js?v=12"></script></body></html>
